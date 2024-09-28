@@ -1,0 +1,28 @@
+.hero {
+    height: 100vh;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.companies, .services, .faq {
+    padding: 40px 0;
+}
+
+.faq {
+    background-color: #f1f1f1;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.btn-main {
+    background-color: #007bff;
+    color: white;
+}
