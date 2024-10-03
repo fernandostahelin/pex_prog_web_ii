@@ -1,51 +1,380 @@
-.hero {
-    height: 100vh;
-    background-color: #f8f9fa; /* Fixed typo: removed backtick */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 50vw; /* Added to make the hero section full width */
-}
-
-.companies, .services, .faq {
-    padding: 40px 0;
-}
-
-.faq {
-    background-color: #f1f1f1;
-}
-
-.footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.btn-main {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px; /* Added padding for a more appealing button */
-    border-radius: 5px; /* Added border radius for rounded corners */
-    transition: background-color 0.3s; /* Added transition for hover effect */
-}
-
-.btn-main:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-}
-
-.grayscale {
-    filter: grayscale(100%);
-}
-
-/* Additional styles for overall page interest */
 body {
-    font-family: 'Arial', sans-serif; /* Changed font for better aesthetics */
-    line-height: 1.6; /* Improved line height for readability */
+  padding: 0 2%;
+}
+
+.hero,
+.companies,
+.services,
+.description,
+.faq {
+  padding: 3% 0;
 }
 
 .container {
-    max-width: 1200px; /* Set a max width for better layout */
-    margin: auto; /* Center the container */
+  padding-left: 5%;
+  padding-right: 3%;
+}
+
+.hero-content {
+  width: 90%;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  padding: 10%;
+}
+
+.description h2,
+.services h2,
+.faq h4 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.description ul li,
+.services p {
+  font-size: 1rem;
+}
+
+.accordion-button {
+  font-size: 1rem;
+  padding: 3%;
+}
+
+.accordion-body {
+  padding: 3%;
+}
+
+.btn-main {
+  padding: 2% 4%;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 767px) {
+    .hero {
+        height: 50vh; /* Further reduce height for smaller screens */
+        margin-bottom: 10vh;
+        padding-bottom: 5vh;
+    }
+
+    .hero img {
+        max-height: 40vh; /* Decrease image height on mobile */
+        filter: brightness(0.6);
+    }
+
+}
+
+
+
+/* Tablet */
+@media (min-width: 768px) {
+  body {
+    padding: 0 4%;
+  }
+
+  .hero,
+  .companies,
+  .services,
+  .description,
+  .faq {
+    padding: 7% 0;
+  }
+
+
+  .container {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .hero-content {
+    width: 80%;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    padding: 10%;
+  }
+
+  .description h2,
+  .services h2,
+  .faq h4 {
+    font-size: 2.2rem;
+  }
+
+  .description ul li,
+  .services p {
+    font-size: 1.1rem;
+  }
+
+  .accordion-button {
+    font-size: 1.1rem;
+    padding: 3%;
+  }
+
+  .accordion-body {
+    padding: 3%;
+  }
+
+  .btn-main {
+    padding: 2% 4%;
+    font-size: 1rem;
+  }
+}
+
+/* Desktop  */
+@media (min-width: 1024px) {
+  body {
+    padding: 0 5%;
+  }
+
+  .hero,
+  .companies,
+  .services,
+  .description,
+  .faq {
+    padding: 8% 0;
+  }
+
+  .container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .hero-content {
+    width: 70%;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    padding: 10%;
+  }
+
+  .description h2,
+  .services h2,
+  .faq h4 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .description ul li,
+  .services p {
+    font-size: 1.1rem;
+  }
+
+  .accordion-button {
+    font-size: 1.1rem;
+    padding: 3%;
+  }
+
+  .accordion-body {
+    padding: 3%;
+  }
+
+  .btn-main {
+    padding: 1.5% 3%;
+    font-size: 1rem;
+  }
+}
+
+.hero {
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+    max-height: 100vh;
+    overflow: hidden; /* Ensures the image doesn't exceed 50% of viewport height */
+    filter: brightness(0.6);
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  padding: 10%;
+}
+
+.companies,
+.services,
+.faq {
+  padding: 80px 0;
+}
+
+.companies#companies_01 {
+  background-color: #eeeeee;
+}
+
+.faq {
+  background-color: #f8f9fa;
+  padding: 80px 0;
+}
+
+.faq h4 {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.accordion-item {
+  border: none;
+  margin-bottom: 1rem;
+}
+
+.accordion-button {
+  background-color: #1b1c53;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 1.5rem;
+  border-radius: 10px !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #1b1c5320;
+  color: #000000;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+.accordion-button::after {
+color:#000000;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:not(.collapsed)::after {
+  color: #000000;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body {
+  background-color: #ffffff;
+  color: #272727;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 1.5rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.btn-main {
+  background-color: #db2924; /* Changed from #007bff to #db2924 */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 5px; /* Changed from 30px to 5px for slightly rounded corners */
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-main:hover {
+  background-color: #b22320; /* Darker shade for hover effect */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.description h2 {
+  color: #e3e3e3;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.description ul li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.description ul li i {
+  color: #007bff;
+  margin-right: 10px;
+}
+
+.services h2 {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+.service-item {
+  background-color: white;
+  padding: 6%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.services img {
+  width: 80px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.services p {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+#companies_01 {
+  color: rgb(0, 0, 0);
+}
+
+#bloco_1 {
+  background-color: #1a1c52;
+  color: #e4e4e4;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black; /* Ensure the background of the icons is black */
+    border-radius: 100%; /* Optional: Make the background circular */
+}
+
+.carousel-item img {
+  height: 25%;
+  width: 25%;
+}
+
+.company-logo {
+  max-width: 100%;
+  height: 100px; /* Adjust this value to set a consistent height */
+  object-fit: contain;
+  padding: 10px;
+  filter: grayscale(100%);
+}
+
+#companies_01 h2 {
+  margin-bottom: 30px;
 }
