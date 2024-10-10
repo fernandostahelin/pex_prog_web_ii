@@ -1,8 +1,3 @@
-body {
-  padding: 0 2%;
-}
-
-.hero,
 .companies,
 .services,
 .description,
@@ -15,13 +10,34 @@ body {
   padding-right: 3%;
 }
 
+.container#hero {
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
 .hero-content {
-  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center; /* Add this line to center the content */
+  width: 90%; /* Adjust as needed */
+  max-width: 1200px; /* Adjust as needed */
 }
 
 .hero h1 {
   font-size: 2rem;
   padding: 10%;
+  margin-bottom: 1.5rem;
+}
+
+.hero-logo {
+  max-width: 30%; /* Adjust this value as needed */
+  height: auto;
+  margin-bottom: 1rem; /* Add some space between the logo and the h1 */
 }
 
 .description h2,
@@ -57,22 +73,24 @@ body {
         padding-bottom: 5vh;
     }
 
-    .hero img {
+    .hero img :not(#hero-logo){
         max-height: 40vh; /* Decrease image height on mobile */
         filter: brightness(0.6);
     }
 
+    .hero h1 {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    .hero-logo {
+        max-width: 50%; /* Larger logo for mobile */
+    }
 }
-
-
 
 /* Tablet */
 @media (min-width: 768px) {
-  body {
-    padding: 0 4%;
-  }
 
-  .hero,
+
   .companies,
   .services,
   .description,
@@ -87,12 +105,11 @@ body {
   }
 
   .hero-content {
-    width: 80%;
+    width: 100%;
   }
 
   .hero h1 {
-    font-size: 2rem;
-    padding: 10%;
+    font-size: 2.5rem;
   }
 
   .description h2,
@@ -123,11 +140,8 @@ body {
 
 /* Desktop  */
 @media (min-width: 1024px) {
-  body {
-    padding: 0 5%;
-  }
 
-  .hero,
+
   .companies,
   .services,
   .description,
@@ -141,7 +155,7 @@ body {
   }
 
   .hero-content {
-    width: 70%;
+    width: 100%;
   }
 
   .hero h1 {
@@ -177,20 +191,20 @@ body {
 }
 
 .hero {
-  background-color: #f8f9fa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   position: relative;
+  width: 100%;
+  height: 100vh; /* This will make the hero section full viewport height */
+  overflow: hidden;
 }
 
-.hero img {
-    max-width: 100%;
-    height: auto;
-    max-height: 100vh;
-    overflow: hidden; /* Ensures the image doesn't exceed 50% of viewport height */
-    filter: brightness(0.6);
+.hero img:not(#hero-logo) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: brightness(0.6);
 }
 
 .hero-content {
@@ -201,6 +215,9 @@ body {
   z-index: 2;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center; /* Add this line to center the content */
+  width: 90%; /* Adjust as needed */
+  max-width: 1200px; /* Adjust as needed */
 }
 
 .hero h1 {
